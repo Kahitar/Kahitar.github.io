@@ -14,8 +14,7 @@ function processFiles(files){
         img.src=e.target.result;
         srcImg.src=e.target.result;
     };
-    setInn("status", "Selected image" + file);
-    reader.readAsDataURL(file[0]);
+    reader.readAsDataURL(file);
 }
 //-------------------------------------------
 function drop(e){

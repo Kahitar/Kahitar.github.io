@@ -112,12 +112,20 @@ function uploadImage(){
     var p=c.getContext('2d').getImageData(0,0,w,h);
     var a=new Array(w*h);
     var i=0;
-    for(var y=0;y<h;y++)for(var x=0;x<w;x++,i++)a[i]=getVal(p,i<<2);
+    for(var y=0;y<h;y++)
+        for(var x=0;x<w;x++,i++)
+            a[i]=getVal(p,i<<2);
     dispX=0;
     pxInd=0;
     stInd=0;
     xhReq=new XMLHttpRequest();
-    rqPrf='http://'+getElm('ip_addr').value+'/';
+    rqPrf='https://io.adafruit.com/Kahitar/feeds/slider/';
+    
+    xhReq.open('POST',rqPrf, true, "Kahitar", "98ca2bd016b545b1a366ec0b51fa3573");
+    xhReq.send(a);
+    return 0;
+
+
     var init='EPD';
 
     if (epdInd==3){  
@@ -127,7 +135,7 @@ function uploadImage(){
             if(stInd==1)return u_done();
         };
         
-         xhReq.open('POST',init, true);
+        xhReq.open('POST',init, true);
         xhReq.send(byteToStr(epdInd));
         return 0;  
     }

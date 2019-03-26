@@ -1,4 +1,5 @@
 function procImg(isLvl,isRed){
+    setInn("status", "Processing image");
     if (document.getElementsByClassName('sourceImage').length == 0){
         alert('First select image');
         return;

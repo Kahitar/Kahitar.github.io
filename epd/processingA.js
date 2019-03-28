@@ -53,39 +53,41 @@ window.onload = function(){
     srcImg=0;
     epdInd=0;
   
-palArr=[[[0,0,0],[255,255,255]],
-[[0,0,0],[255,255,255],[127,0,0]],
-[[0,0,0],[255,255,255],[127,127,127]],
-[[0,0,0],[255,255,255],[127,127,127],[127,0,0]],
-[[0,0,0],[255,255,255]],
-[[0,0,0],[255,255,255],[220,180,0]]];
-  
-epdArr=[[200,200,0],[200,200,3],[152,152,5],
-[122,250,0],[104,212,1],[104,212,5],[104,212,0],
-[176,264,0],[176,264,1],
-[128,296,0],[128,296,1],[128,296,5],
-[400,300,0],[400,300,1],[400,300,5],
-[600,448,0],[600,448,1],[600,448,5],
-[640,384,0],[640,384,1],[640,384,5]];
-  
-setInn('BT',
-Btn(0,'Select image file','processFiles(this.files);')+
-Btn(1,'Level: mono','procImg(true,false);')+
-Btn(2,'Level: color','procImg(true,true);')+
-Btn(3,'Dithering: mono','procImg(false,false);')+
-Btn(4,'Dithering: color','procImg(false,true);')+
-Btn(5,'Upload image','uploadImage();'));
+    palArr=[[[0,0,0],[255,255,255]],
+    [[0,0,0],[255,255,255],[127,0,0]],
+    [[0,0,0],[255,255,255],[127,127,127]],
+    [[0,0,0],[255,255,255],[127,127,127],[127,0,0]],
+    [[0,0,0],[255,255,255]],
+    [[0,0,0],[255,255,255],[220,180,0]]];
+      
+    epdArr=[[200,200,0],[200,200,3],[152,152,5],
+    [122,250,0],[104,212,1],[104,212,5],[104,212,0],
+    [176,264,0],[176,264,1],
+    [128,296,0],[128,296,1],[128,296,5],
+    [400,300,0],[400,300,1],[400,300,5],
+    [600,448,0],[600,448,1],[600,448,5],
+    [640,384,0],[640,384,1],[640,384,5]];
+      
+    setInn('BT',
+        Btn(0,'Select image file','processFiles(this.files);')+
+        Btn(1,'Level: mono','procImg(true,false);')+
+        Btn(2,'Level: color','procImg(true,true);')+
+        Btn(3,'Dithering: mono','procImg(false,false);')+
+        Btn(4,'Dithering: color','procImg(false,true);')+
+        Btn(5,'Upload image','uploadImage();')
+    );
 
-setInn('XY',getNud('x','0')+getNud('y','0'));
-setInn('WH',getNud('w','200')+getNud('h','200'));
-  
-setInn('RB',RB(0,'1.54&ensp;')+RB(1,'1.54b')+RB(2,'1.54c')+
-RB(3,'2.13&ensp;')+RB(4,'2.13b')+RB(5,'2.13c')+RB(6,'2.13d')+
-RB(7,'2.7&ensp;&ensp;')+RB(8,'2.7b&ensp;')+
-RB(9,'2.9&ensp;&ensp;')+RB(10,'2.9b&ensp;')+RB(11,'2.9c&ensp;')+
-RB(12,'4.2&ensp;&ensp;')+RB(13,'4.2b&ensp;')+RB(14,'4.2c&ensp;')+
-RB(15,'5.83&ensp;')+RB(16,'5.83b')+RB(17,'5.83c')+
-RB(18,'7.5&ensp;&ensp;')+RB(19,'7.5b&ensp;')+RB(20,'7.5c&ensp;'));
+    setInn('XY',getNud('x','0')+getNud('y','0'));
+    setInn('WH',getNud('w','200')+getNud('h','200'));
+      
+    setInn('RB',RB(0,'1.54&ensp;')+RB(1,'1.54b')+RB(2,'1.54c')+
+        RB(3,'2.13&ensp;')+RB(4,'2.13b')+RB(5,'2.13c')+RB(6,'2.13d')+
+        RB(7,'2.7&ensp;&ensp;')+RB(8,'2.7b&ensp;')+
+        RB(9,'2.9&ensp;&ensp;')+RB(10,'2.9b&ensp;')+RB(11,'2.9c&ensp;')+
+        RB(12,'4.2&ensp;&ensp;')+RB(13,'4.2b&ensp;')+RB(14,'4.2c&ensp;')+
+        RB(15,'5.83&ensp;')+RB(16,'5.83b')+RB(17,'5.83c')+
+        RB(18,'7.5&ensp;&ensp;')+RB(19,'7.5b&ensp;')+RB(20,'7.5c&ensp;')
+    );
 }
 //-------------------------------------------
 function rbClick(index){

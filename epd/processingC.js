@@ -41,8 +41,10 @@ function procImg(isLvl,isRed){
     if(isLvl){
         for (var j=0;j<dH;j++){
             var y=dY+j;
+
             if ((y<0)||(y>=sH)){
-                for (var i=0;i<dW;i++,index+=4) setVal(pDst,index,(i+j)%2==0?1:0);
+                for (var i=0;i<dW;i++,index+=4) 
+                    setVal(pDst,index,(i+j)%2==0?1:0);
                 continue;
             }
             
@@ -59,8 +61,8 @@ function procImg(isLvl,isRed){
                  setVal(pDst,index,getNear(pSrc.data[pos],pSrc.data[pos+1],pSrc.data[pos+2]));
                  index+=4;
              }
-         }
-    }else{
+        }
+    } else {
         var aInd=0;
         var bInd=1;
         var errArr=new Array(2);
